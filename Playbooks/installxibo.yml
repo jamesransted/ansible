@@ -1,0 +1,13 @@
+---
+  - name: installxiboplayer
+    hosts: clients
+    tasks:
+      - name: snapd present
+        ansible.builtin.apt:
+          name: snapd
+          state: present
+      - name: install xibo player
+        community.general.snap:
+          name: xibo-player
+          state: present
+
